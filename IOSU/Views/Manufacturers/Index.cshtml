@@ -1,0 +1,47 @@
+﻿@model IEnumerable<IOSU.Models.Manufacturer>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class="text-center">
+    <h3>Производители</h3>
+    <p>
+        <a asp-action="Create">Create New</a>
+    </p>
+</div>
+<table class="table table-dark">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Certification)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CreationData)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                    @if (item.Certification){<a>Да</a>} else{<a>Нет</a>}
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CreationData)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

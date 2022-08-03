@@ -1,0 +1,53 @@
+﻿@model IEnumerable<IOSU.Models.Manager>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class="text-center">
+    <h3>Менеджеры</h3>
+    <p>
+        <a asp-action="Create">Create New</a>
+    </p>
+</div>
+<table class="table table-dark">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.FullName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Wage)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BirthDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PhoneNumber)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.FullName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Wage)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BirthDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PhoneNumber)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.PassportNumber">Edit</a> |
+                <a asp-action="Delete" asp-route-id="@item.PassportNumber">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

@@ -1,0 +1,75 @@
+﻿@model IEnumerable<IOSU.ViewModels.DynamicViewModel>
+
+<div class="text-center">
+    <h4>Динамика реализации товара</h4>
+</div>
+
+<table class="table table-dark">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayName("Наименование")
+            </th>
+            <th>
+                @Html.DisplayName("Январь")
+            </th>
+            <th>
+                @Html.DisplayName("Февраль")
+            </th>
+            <th>
+                @Html.DisplayName("Март")
+            </th>
+            <th>
+                @Html.DisplayName("Апрель")
+            </th>
+            <th>
+                @Html.DisplayName("Май")
+            </th>
+            <th>
+                @Html.DisplayName("Июнь")
+            </th>
+            <th>
+                @Html.DisplayName("Июль")
+            </th>
+            <th>
+                @Html.DisplayName("Август")
+            </th>
+            <th>
+                @Html.DisplayName("Сентябрь")
+            </th>
+            <th>
+                @Html.DisplayName("Октябрь")
+            </th>
+            <th>
+                @Html.DisplayName("Ноябрь")
+            </th>
+            <th>
+                @Html.DisplayName("Декабрь")
+            </th>
+            <th>
+                @Html.DisplayName("Всего")
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var item in Model)
+        {
+            <tr>
+                <th>@item.Name</th>
+                <th>@item.January</th>
+                <th>@item.February</th>
+                <th>@item.March</th>
+                <th>@item.April</th>
+                <th>@item.May</th>
+                <th>@item.June</th>
+                <th>@item.July</th>
+                <th>@item.August</th>
+                <th>@item.September</th>
+                <th>@item.October</th>
+                <th>@item.November</th>
+                <th>@item.December</th>
+                <th>@item.All</th>
+            </tr>
+        }
+    </tbody>
+</table>
